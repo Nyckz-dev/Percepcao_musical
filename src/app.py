@@ -1,16 +1,11 @@
-import pygame
+from flask import Flask, render_template
 
-pygame.init()
-print("Versão do pygame:", pygame.version.ver)
+app = Flask(__name__)
 
-# cria uma janela simples
-screen = pygame.display.set_mode((400, 300))
-pygame.display.set_caption("Teste Pygame")
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+if __name__ == "__main__":
+    app.run(debug=True)
 
-pygame.quit()
