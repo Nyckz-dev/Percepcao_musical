@@ -1,0 +1,9 @@
+# Normalizar finais de linha
+* text=auto
+
+# Tratar arquivos Python como texto
+*.py text diff
+
+# Tratar arquivos de áudio como binários
+*.wav binary
+*.mp3 binary
