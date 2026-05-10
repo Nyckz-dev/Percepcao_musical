@@ -1,10 +1,20 @@
 {% extends "layout.html" %}
-
 {% block title %}Início{% endblock %}
-
 {% block content %}
-    <h2>Comece agora</h2>
-    <a href="/Menu">
-        <button>Iniciar Exercício</button>
-    </a>
+<div class="exercise-options"></div>
+<script src="{{ url_for('static', filename='js/script-home.js') }}"></script>
+
+<div id="music-player">
+  <div class="player-header">Music box</div>
+  <div class="player-controls">
+    <button id="playPause">▶</button>
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progress" value="0" max="100">
+  </div>
+</div>
+
+<audio id="bg-music" src="{{ url_for('static', filename='music/backgroundAudio/Jazz.mp3') }}"></audio>
+
+<script src="{{ url_for('static', filename='js/script-musicbox.js') }}"></script>
 {% endblock %}
+

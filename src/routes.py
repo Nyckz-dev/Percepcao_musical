@@ -1,15 +1,16 @@
 from flask import Blueprint, render_template, request
 from exercises.notes import note_generation, answer_verification
 
+
 routes = Blueprint("routes", __name__)
 
 @routes.route("/")
 def index():
     return render_template("index.html")
 
-@routes.route("/Menu")
-def exerciseMenu():
-    return render_template("exerciseMenu.html")
+@routes.route("/Menu.pn")
+def IntervalPerception():
+    return render_template("IntervalPerception.html")
 
 @routes.route("/Nota_Única", methods=["GET", "POST"])
 def exercises():
@@ -25,4 +26,11 @@ def exercises():
             message = "❌ Tente novamente!"
     
     return render_template("exercise.html", note=note, message=message)
- 
+
+@routes.route("/Menu.rit")
+def RhythmPerception():
+    return render_template("RhythmPerception.html")
+
+@routes.route("/Menu.tun")
+def TuningPerception():
+    return render_template("TuningPerception.html")
