@@ -1,6 +1,6 @@
 import random
 
-NOTES = ["C", "D", "E", "F", "G", "A", "B"]
+NOTES = ["C", "Csharp", "D", "Dsharp", "E", "F", "Fsharp", "G", "Gsharp", "A", "Asharp", "B"]
 
 def note_generation():
   return random.choice(NOTES)

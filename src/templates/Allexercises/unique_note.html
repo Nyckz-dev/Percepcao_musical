@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Nota Única{% endblock %}
+
+{% block content %}
+<h2 style="text-align:center; font-family:'Montserrat', sans-serif;">Que nota é essa?</h2>
+
+<!-- Teclado virtual -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/keyboard.css') }}">
+<div id="virtual-keyboard">
+    <div class="key white" data-note="C">Dó</div>
+    <div class="key white" data-note="D">Ré</div>
+    <div class="key white" data-note="E">Mi</div>
+    <div class="key white" data-note="F">Fá</div>
+    <div class="key white" data-note="G">Sol</div>
+    <div class="key white" data-note="A">Lá</div>
+    <div class="key white" data-note="B">Si</div>
+
+    <div class="key black" data-note="Csharp">Dó#</div>
+    <div class="key black" data-note="Dsharp">Ré#</div>
+    <div class="key black" data-note="Fsharp">Fá#</div>
+    <div class="key black" data-note="Gsharp">Sol#</div>
+    <div class="key black" data-note="Asharp">Lá#</div>
+    
+    
+</div>
+
+<div id="exercise" data-correct="{{ note }}"></div>
+<p id="feedback" style="text-align:center; margin-top:10px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;">{{ message }}</p>
+
+<audio id="exercise-audio" src="{{ url_for('static', filename='sounds/' ~ note ~ '.wav') }}" type="audio/wav"></audio>
+<div id="note-player">
+  <button id="playNote">▶</button>
+</div>
+
+<script type="module" src="{{ url_for('static', filename='js/unique-note.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script-noteplayer.js') }}"></script>
+{% endblock %}

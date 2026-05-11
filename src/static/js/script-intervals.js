@@ -2,7 +2,7 @@ const container = document.querySelector(".exercise-options");
 
 if (container) {
     const intervalares = [
-        { titulo: "Nota Única", descricao: "Treine percepção de notas isoladas", link: "/Nota_Unica" },
+        { titulo: "Nota Única", descricao: "Treine percepção de notas isoladas", link: "/Nota_Única" },
         { titulo: "Escalas", descricao: "Pratique escalas musicais", link: "/exercises/scales" },
         { titulo: "Intervalos", descricao: "Treine percepção de intervalos", link: "/exercises/intervals" },
         { titulo: "Acordes", descricao: "Pratique percepção de acordes", link: "/exercises/chords" }

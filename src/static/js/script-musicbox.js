@@ -18,8 +18,24 @@ player.addEventListener("mousedown", (e) => {
 
 document.addEventListener("mousemove", (e) => {
     if (isDragging) {
-        player.style.left = e.clientX - offsetX + "px";
-        player.style.top = e.clientY - offsetY + "px";
+        const maxWidth = window.innerWidth;
+        const maxHeight = window.innerHeigth;
+
+        // Dimensões do player
+        const playerWidth = player.offsetWidth;
+        const playerHeight = player.offsetHeight;
+
+        //Novas posições calculdas
+        let newLeft = e.clientX - offsetX;
+        let newTop = e.clientY - offsetY;
+
+       // Limites verticais (não deixa passar do footer)
+        if (newTop < 0) newTop = 0;
+        if (newTop + playerHeight > maxHeight) newTop = maxHeight - playerHeight;
+
+        // Aplica posição limitada
+        player.style.left = newLeft + "px";
+        player.style.top = newTop + "px";
     }
 });
 

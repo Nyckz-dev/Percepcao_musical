@@ -1,0 +1,54 @@
+#virtual-keyboard {
+  position: relative;
+  display: flex;
+  width: 420px;
+  height: 150px;
+  margin: 20px auto;
+  font-family:'Montserrat', sans-serif;
+}
+
+/* Teclas brancas */
+.key.white {
+  width: 60px;
+  height: 150px;
+  background: #fff;
+  color: black;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 250px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* sombra sutil */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.key.white:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Teclas pretas */
+.key.black {
+  position: absolute;
+  width: 40px;
+  height: 90px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 80px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35); /* sombra mais forte */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.key.black:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Posicionamento das pretas em relação às brancas */
+.key.black[data-note="Csharp"] { left: 45px; }
+.key.black[data-note="Dsharp"] { left: 105px; }
+.key.black[data-note="Fsharp"] { left: 225px; }
+.key.black[data-note="Gsharp"] { left: 285px; }
+.key.black[data-note="Asharp"] { left: 345px; }
